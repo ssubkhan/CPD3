@@ -30,8 +30,8 @@ def csv_to_html(csv_filename, output_folder):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{link_text}</title>
 
-<link rel="stylesheet" href="..css/reset.css">  <!-- Link to the CSS file -->
-<link rel="stylesheet" href="..css/style.css">  <!-- Link to the CSS file -->
+<link rel="stylesheet" href="../css/reset.css">  <!-- Link to the CSS file -->
+<link rel="stylesheet" href="../css/style.css">  <!-- Link to the CSS file -->
 
 </head>
    <body>

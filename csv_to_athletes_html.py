@@ -50,8 +50,8 @@ def gen_athlete_page(data, outfile):
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>{data["name"]}</title>
 
-      <link rel="stylesheet" href = "..css/reset.css">
-      <link rel="stylesheet" href = "..css/style.css">
+      <link rel="stylesheet" href = "../css/reset.css">
+      <link rel="stylesheet" href = "../css/style.css">
    </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
