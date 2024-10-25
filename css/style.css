@@ -20,6 +20,12 @@ header h1 {
     margin-bottom: 10px;
 }
 
+header h2 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
 header img {
     border-radius: 50%;
     width: 150px;
