@@ -1,123 +1,212 @@
-/* Global Styles */
+/* ================== Global Styles (Mobile-First) ================== */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: rgb(204, 209, 255); 
-    padding: 20px;
+    line-height: 1.5;
+    color: var(--text-color, #333);
+    background-color: var(--bg-color, rgb(204, 209, 255));
+    padding: 10px;
 }
 
-/* Header Styles */
+/* ================== Header Styles ================== */
 header {
     text-align: center;
-    margin-bottom: 40px;
-  
+    margin-bottom: 20px;
 }
-
 header h1 {
-    font-size: 36px;
+    font-size: 24px;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
-
-header h2 {
-    font-size: 36px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
 header img {
     border-radius: 50%;
-    width: 150px;
+    width: 80px;
+    height: 80px;
 }
 
-/* Navigation Styles */
+/* ================== Navigation Styles ================== */
 nav ul {
     list-style-type: none;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    padding: 0;
 }
-
 nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+    display: block;
+    margin: 5px 0;
 }
-
 nav ul li a {
     color: #2980b9;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: color 0.3s;
 }
-
 nav ul li a:hover {
     color: #1abc9c;
 }
 
-/* Table Styles */
+/* ================== Table Styles ================== */
+.table-container {
+    overflow-x: auto;
+}
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     background-color: #fff;
 }
-
 th, td {
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ddd;
+    font-size: 12px;
 }
-
 th {
     background-color: #2980b9;
     color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
-
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Gallery Section */
-#gallery {
-    text-align: center;
+/* Card Layout for Mobile Screens */
+table, tr, th, td {
+    display: block;
+    width: 100%;
+}
+tr {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+}
+td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+}
+.low-priority {
+    display: none;
 }
 
-#gallery h2 {
+/* ================== Collapsible Sections ================== */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.collapsible:checked ~ .collapsible-content {
+    max-height: 500px;
+}
+
+/* ================== Dynamic Visualizations ================== */
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 8px;
+    height: 10px;
+    width: 100%;
+}
+.progress {
+    background-color: #1abc9c;
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.5s ease;
+}
+
+/* ================== Floating Action Buttons (FAB) ================== */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2980b9;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
     font-size: 24px;
-    color: #2c3e50;
-    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+}
+.fab:hover {
+    background-color: #1abc9c;
 }
 
-/* Footer Styles */
+/* ================== Touch-Friendly Hover Effects ================== */
+.touch-hover {
+    transition: transform 0.3s ease;
+}
+.touch-hover:active {
+    transform: scale(1.05);
+}
+
+/* ================== Custom Typography and Iconography ================== */
+h1 {
+    font-size: 24px;
+}
+
+/* ================== Dark Mode and High Contrast Mode ================== */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #2980b9;
+}
+[data-theme="dark"] {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --primary-color: #1abc9c;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+@media (prefers-contrast: high) {
+    :root {
+        --text-color: #000;
+        --bg-color: #fff;
+        --primary-color: #000;
+    }
+}
+
+/* ================== Circular Profile Images with Shadow ================== */
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ================== Animations ================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animated {
+    animation: fadeIn 0.5s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+    .animated {
+        animation: none;
+    }
+}
+
+/* ================== Footer Styles ================== */
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 14px;
-    color: #7f8c8d;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 12px;
     background-color: #2c3e50;
     color: #fff;
 }
-
 footer a {
     color: #1abc9c;
 }
-
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    table, th, td {
-        font-size: 14px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
 }
