@@ -230,18 +230,6 @@ tr:nth-child(odd) {
 }
 
 
-/* Athlete Styles */
-.athlete {
-    margin: 10px; /* Margin for spacing between cards */
-    background: #fff; /* White background for athlete cards */
-    border: 1px solid #ddd; /* Light border for athlete cards */
-    border-radius: 5px;
-    padding: 10px;
-    transition: transform 0.3s; /* Smooth transition for hover effect */
-    position: relative; /* For positioning pseudo-elements */
-    flex: 1 1 30%; /* Ensure three cards per row */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
 
 .athlete:hover {
     transform: scale(1.02); /* Scale effect on hover */
@@ -287,7 +275,8 @@ img {
 /* Athlete Card Styles */
 .athlete-card {
     background-color: #f9f9f9; /* Light background for card */
-    border: 1px solid #ddd; /* Light border */
+    border: 3px solid #ddd; /* Light border */
+    margin-bottom: 20px;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     padding: 15px; /* Internal padding */
@@ -311,11 +300,15 @@ img {
 }
 
 .athlete-card img {
-    border-radius: 60%; /* Circular profile picture */
-    width: 50%; /* Responsive image */
+    border-radius: 50%; /* Circular profile picture */
+    width: 35%; /* Responsive image width */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image */
+    border: 5px solid #a3a3a3; /* Border color and thickness */
+    display: block; /* Ensure it behaves like a block element */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for a lifted effect */
 }
+
 
 .athlete-card dl {
     margin: 10px 0; /* Spacing for description list */
