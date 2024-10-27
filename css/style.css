@@ -9,7 +9,6 @@
     --footer-text-color: #fff; /* White text for footer */
 }
 
-
 /* Navbar Styles */
 nav {
     background-color: #ffffff; /* White background for navbar */
@@ -50,7 +49,7 @@ h2 {
     margin: 0 auto; /* Center the container */
     padding: 20px; /* Padding on all sides for content */
     background-color: var(--card-background); /* Background for content area */
-    border-radius: 10px; /* Rounded corners for content */
+    border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
@@ -227,4 +226,70 @@ tr:nth-child(even).high-contrast {
 .toggle-button.active {
     background-color: var(--header-color); /* Active background color */
     color: #fff; /* Active text color */
+}
+
+/* General Styles for Athlete Cards */
+.athlete-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: space-between; /* Space between items */
+    margin: 20px 0; /* Margin for the section */
+}
+
+.athlete-card {
+    background-color: #f9f9f9; /* Light background for the card */
+    border: 1px solid #ddd; /* Subtle border for distinction */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 10px; /* Space around each card */
+    flex: 0 1 calc(33.33% - 20px); /* Default size: Three cards per row */
+    box-sizing: border-box; /* Include padding/border in the element's total width */
+}
+
+/* Athlete Image Style */
+.athlete-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+/* Athlete Details Style */
+.athlete-details {
+    padding: 10px; /* Padding inside the details */
+}
+
+.athlete-details dt {
+    font-weight: bold; /* Bold for the term */
+}
+
+.athlete-details dd {
+    margin: 0 0 10px; /* Space below the definition */
+}
+
+/* Collapsible Section Styles */
+.collapsible {
+    cursor: pointer; /* Pointer on hover */
+    padding: 10px; /* Padding for the collapsible header */
+    background-color: var(--header-color); /* Header color */
+    color: #fff; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below */
+}
+
+.content {
+    display: none; /* Hidden by default */
+    padding: 10px; /* Padding for the content */
+    background-color: #f1f1f1; /* Light background */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Transitions for Content */
+.content.show {
+    display: block; /* Show when active */
+}
+
+/* Touch-Friendly Hover Effects */
+.athlete-card:hover .athlete-details {
+    background-color: #f0f8ff; /* Light blue on hover */
+    transition: background-color 0.3s; /* Smooth transition */
 }

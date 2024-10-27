@@ -35,7 +35,7 @@
         </section>
         
         <section id="team-results">
-            <h2>Team Results</h2>
+            <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
             <table>
             <tr><th>Place</th><th>Team</th><th>Score</th></tr>
 <tr><td>1</td><td>Holly</td><td>24</td></tr>
@@ -63,76 +63,88 @@
                     <section id="individual-results">
 
                     <h2>Individual Results</h2>
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/23564884.jpg" width="200" alt="Profile picture of Irie Scrase"> 
                         <figcaption>Irie Scrase</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>11.</dd>
-                        <dt>Time</dt><dd>19:48.9</dd>
-                        <dt>Grade</dt><dd>10</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>11.</dd>
+                            <dt>Time</dt><dd>19:48.9</dd>
+                            <dt>Grade</dt><dd>10</dd>
+                        </dl>
+                    </div>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/23349671.jpg" width="200" alt="Profile picture of Lila Edison"> 
                         <figcaption>Lila Edison</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>41.</dd>
-                        <dt>Time</dt><dd>21:47.4</dd>
-                        <dt>Grade</dt><dd>9</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>41.</dd>
+                            <dt>Time</dt><dd>21:47.4</dd>
+                            <dt>Grade</dt><dd>9</dd>
+                        </dl>
+                    </div>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/23349719.jpg" width="200" alt="Profile picture of Isla Tharp"> 
                         <figcaption>Isla Tharp</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>45.</dd>
-                        <dt>Time</dt><dd>21:52.3</dd>
-                        <dt>Grade</dt><dd>10</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>45.</dd>
+                            <dt>Time</dt><dd>21:52.3</dd>
+                            <dt>Grade</dt><dd>10</dd>
+                        </dl>
+                    </div>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/23564882.jpg" width="200" alt="Profile picture of Alison Kauffman"> 
                         <figcaption>Alison Kauffman</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>55.</dd>
-                        <dt>Time</dt><dd>22:09.9</dd>
-                        <dt>Grade</dt><dd>10</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>55.</dd>
+                            <dt>Time</dt><dd>22:09.9</dd>
+                            <dt>Grade</dt><dd>10</dd>
+                        </dl>
+                    </div>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/23687883.jpg" width="200" alt="Profile picture of Mara Mocanu"> 
                         <figcaption>Mara Mocanu</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>56.</dd>
-                        <dt>Time</dt><dd>22:13.0</dd>
-                        <dt>Grade</dt><dd>10</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>56.</dd>
+                            <dt>Time</dt><dd>22:13.0</dd>
+                            <dt>Grade</dt><dd>10</dd>
+                        </dl>
+                    </div>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/19352189.jpg" width="200" alt="Profile picture of Ayla Balazer"> 
                         <figcaption>Ayla Balazer</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>90.</dd>
-                        <dt>Time</dt><dd>24:18.8</dd>
-                        <dt>Grade</dt><dd>12</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>90.</dd>
+                            <dt>Time</dt><dd>24:18.8</dd>
+                            <dt>Grade</dt><dd>12</dd>
+                        </dl>
+                    </div>
                 </div>
                 </section>
 
@@ -151,16 +163,34 @@
                 Follow us on Instagram <a href="https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </p>
         </footer>
-        <script>
-            function setMode(mode) {
-                document.body.classList.remove('dark-mode', 'high-contrast');
-                if (mode === 'dark') {
-                    document.body.classList.add('dark-mode');
-                } else if (mode === 'high-contrast') {
-                    document.body.classList.add('high-contrast');
-                }
+        <script src="../js/script.js"></script> <!-- Link to the external JS file -->
+        <style>
+            /* Sticky Header Style for Team Results */
+            .sticky-header {
+                position: -webkit-sticky; /* For Safari */
+                position: sticky;
+                top: 0;
+                z-index: 1000; /* Ensures it stays on top of other content */
+                background: white; /* Set your desired background color */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
             }
-        </script>
+
+            /* Athlete card style */
+            .athlete-card {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                margin: 10px;
+                padding: 10px;
+                display: inline-block; /* Allows cards to sit next to each other */
+                width: 200px; /* Set a width for the cards */
+                vertical-align: top; /* Align cards to the top */
+            }
+
+            /* Additional styles to manage the body layout */
+            body {
+                padding-top: 60px; /* Give space for the header */
+            }
+        </style>
         </body>
         </html>
         

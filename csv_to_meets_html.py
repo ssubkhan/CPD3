@@ -60,7 +60,7 @@ def csv_to_html(csv_filename, output_folder):
         </section>
         
         <section id="team-results">
-            <h2>Team Results</h2>
+            <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
             <table>
             """
 
@@ -89,18 +89,20 @@ def csv_to_html(csv_filename, output_folder):
                 time = row[4]
                 profile_pic = row[7]
 
-                # Add the athlete div
+                # Add the athlete card
                 html_content += f"""
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
                         <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
                         <figcaption>{name}</figcaption>
                     </figure>
-                    <dl>
-                        <dt>Place</dt><dd>{place}</dd>
-                        <dt>Time</dt><dd>{time}</dd>
-                        <dt>Grade</dt><dd>{grade}</dd>
-                    </dl>
+                    <div class="athlete-details">
+                        <dl>
+                            <dt>Place</dt><dd>{place}</dd>
+                            <dt>Time</dt><dd>{time}</dd>
+                            <dt>Grade</dt><dd>{grade}</dd>
+                        </dl>
+                    </div>
                 </div>
                 """
 
@@ -120,16 +122,34 @@ def csv_to_html(csv_filename, output_folder):
                 Follow us on Instagram <a href="https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </p>
         </footer>
-        <script>
-            function setMode(mode) {
-                document.body.classList.remove('dark-mode', 'high-contrast');
-                if (mode === 'dark') {
-                    document.body.classList.add('dark-mode');
-                } else if (mode === 'high-contrast') {
-                    document.body.classList.add('high-contrast');
-                }
+        <script src="../js/script.js"></script> <!-- Link to the external JS file -->
+        <style>
+            /* Sticky Header Style for Team Results */
+            .sticky-header {
+                position: -webkit-sticky; /* For Safari */
+                position: sticky;
+                top: 0;
+                z-index: 1000; /* Ensures it stays on top of other content */
+                background: white; /* Set your desired background color */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
             }
-        </script>
+
+            /* Athlete card style */
+            .athlete-card {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                margin: 10px;
+                padding: 10px;
+                display: inline-block; /* Allows cards to sit next to each other */
+                width: 200px; /* Set a width for the cards */
+                vertical-align: top; /* Align cards to the top */
+            }
+
+            /* Additional styles to manage the body layout */
+            body {
+                padding-top: 60px; /* Give space for the header */
+            }
+        </style>
         </body>
         </html>
         """
@@ -139,6 +159,9 @@ def csv_to_html(csv_filename, output_folder):
             htmlfile.write(html_content)
 
         print(f"HTML file '{html_filename}' created successfully.")
+
+# The rest of your functions remain unchanged
+# ...
 
 def create_meet_image_gallery(url):
     meet_id = extract_meet_id(url)
