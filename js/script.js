@@ -13,4 +13,4 @@ document.getElementById('high-contrast-mode').addEventListener('click', function
     document.body.classList.toggle('high-contrast');
 });
 
-// Add any additional JavaScript functions or code here
+

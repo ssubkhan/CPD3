@@ -60,7 +60,7 @@ def csv_to_html(csv_filename, output_folder):
         </section>
         
         <section id="team-results">
-            <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
+            <h2 class="sticky-header">Team Results (Place / Team / Score) </h2>
             <table>
             """
 
@@ -89,27 +89,25 @@ def csv_to_html(csv_filename, output_folder):
                 time = row[4]
                 profile_pic = row[7]
 
-                # Add the athlete card
+                # Add the athlete div
                 html_content += f"""
-                <div class="athlete-card">
+                <div class="athlete">
                     <figure> 
                         <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
                         <figcaption>{name}</figcaption>
                     </figure>
-                    <div class="athlete-details">
-                        <dl>
-                            <dt>Place</dt><dd>{place}</dd>
-                            <dt>Time</dt><dd>{time}</dd>
-                            <dt>Grade</dt><dd>{grade}</dd>
-                        </dl>
-                    </div>
+                    <dl>
+                        <dt>Place</dt><dd>{place}</dd>
+                        <dt>Time</dt><dd>{time}</dd>
+                        <dt>Grade</dt><dd>{grade}</dd>
+                    </dl>
                 </div>
                 """
 
         html_content += """</section>\n
         <section id="gallery">
             <h2>Gallery</h2>
-            """ + create_meet_image_gallery(link_url) + """
+            <div class="gallery-container">""" + create_meet_image_gallery(link_url) + """</div>
         </section>
         </main>   
         <footer>
@@ -122,7 +120,16 @@ def csv_to_html(csv_filename, output_folder):
                 Follow us on Instagram <a href="https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </p>
         </footer>
-        <script src="../js/script.js"></script> <!-- Link to the external JS file -->
+        <script>
+            function setMode(mode) {
+                document.body.classList.remove('dark-mode', 'high-contrast');
+                if (mode === 'dark') {
+                    document.body.classList.add('dark-mode');
+                } else if (mode === 'high-contrast') {
+                    document.body.classList.add('high-contrast');
+                }
+            }
+        </script>
         <style>
             /* Sticky Header Style for Team Results */
             .sticky-header {
@@ -130,19 +137,7 @@ def csv_to_html(csv_filename, output_folder):
                 position: sticky;
                 top: 0;
                 z-index: 1000; /* Ensures it stays on top of other content */
-                background: white; /* Set your desired background color */
                 box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
-            }
-
-            /* Athlete card style */
-            .athlete-card {
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                margin: 10px;
-                padding: 10px;
-                display: inline-block; /* Allows cards to sit next to each other */
-                width: 200px; /* Set a width for the cards */
-                vertical-align: top; /* Align cards to the top */
             }
 
             /* Additional styles to manage the body layout */
@@ -159,9 +154,6 @@ def csv_to_html(csv_filename, output_folder):
             htmlfile.write(html_content)
 
         print(f"HTML file '{html_filename}' created successfully.")
-
-# The rest of your functions remain unchanged
-# ...
 
 def create_meet_image_gallery(url):
     meet_id = extract_meet_id(url)
@@ -200,7 +192,7 @@ def generate_image_tags(image_files, folder_path):
     img_tags = []
     for img in image_files:
         img_path = os.path.join(folder_path, img)
-        img_tags.append(f'<img src="../{img_path}" width="200" alt="">')
+        img_tags.append(f'<img src="../{img_path}" alt="Image from meet {img}" />')  # Added alt text
     return "\n".join(img_tags)
 
 def process_meet_files():
@@ -221,3 +213,4 @@ if __name__ == "__main__":
         print(f"Folder '{meets_folder}' does not exist.")
     else:
         process_meet_files()
+

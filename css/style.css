@@ -293,3 +293,17 @@ tr:nth-child(even).high-contrast {
     background-color: #f0f8ff; /* Light blue on hover */
     transition: background-color 0.3s; /* Smooth transition */
 }
+
+tr {
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+footer a:hover {
+    color: #2980b9; /* Link color on hover */
+}
+
