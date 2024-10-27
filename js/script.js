@@ -13,4 +13,12 @@ document.getElementById('high-contrast-mode').addEventListener('click', function
     document.body.classList.toggle('high-contrast');
 });
 
+function setMode(mode) {
+    document.body.classList.remove('dark-mode', 'high-contrast');
+    if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else if (mode === 'high-contrast') {
+        document.body.classList.add('high-contrast');
+    }
+}
 

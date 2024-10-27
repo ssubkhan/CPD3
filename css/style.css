@@ -1,309 +1,282 @@
 /* Global Styles */
-:root {
-    --text-color: #666; /* Darker text for normal mode */
-    --background-color: #eaf4ff; /* Very light blue background for accessibility */
-    --header-color: navy; /* Navy for headings */
-    --card-background: #ffffff; /* Light background for content area */
-    --table-background: #d0e4f7; /* In-between blue for table background */
-    --footer-background: #2c3e50; /* Dark footer background */
-    --footer-text-color: #fff; /* White text for footer */
-}
-
-/* Navbar Styles */
-nav {
-    background-color: #ffffff; /* White background for navbar */
-}
-
-nav a {
-    color: #2980b9; /* Link color */
-}
-
-/* Normal Mode Styles */
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.5;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    padding: 20px;
-    margin: 0;
+    line-height: 1.6;
+    padding-top: 60px; /* Space for the fixed header */
+    background-color: #f9f9f9; /* Very light background */
+    color: #333; /* Dark text for readability */
+    margin: 0; /* Remove default margin */
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: 10px; /* Position it at the top */
+    left: 10px; /* Position it to the left */
+    background: #fdfdfd; /* Light background for visibility */
+    color: #000000; /* Black text for visibility */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    padding: 8px 12px; /* Add padding for better clickable area */
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s; /* Smooth background transition */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Change color on focus */
+.skip-link:focus {
+    background: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove outline */
 }
 
 /* Dark Mode Styles */
-body.dark-mode {
-    --text-color: #e0e0e0; /* Light text for dark mode */
-    --background-color: #121212; /* Dark background */
-    --header-color: #bb86fc; /* Light purple for headings in dark mode */
-    --card-background: #1e1e1e; /* Dark background for content area */
-    --table-background: #2e2e2e; /* Dark background for tables */
-    --footer-background: #1f1f1f; /* Darker footer background */
-    --footer-text-color: #e0e0e0; /* Light text for footer */
+.dark-mode {
+    background-color: #121212; /* Darker background for dark mode */
+    color: #e0e0e0; /* Light text for dark mode */
 }
 
-/* Styles for h2 titles in index.html */
-h2 {
-    color: var(--header-color);
+.dark-mode header h1 a {
+    color: #bb86fc; /* Light purple link color for dark mode */
 }
 
-/* Centered Content Styles */
-.container {
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Padding on all sides for content */
-    background-color: var(--card-background); /* Background for content area */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+.dark-mode nav {
+    background-color: #1e1e1e; /* Dark background for nav in dark mode */
 }
 
-/* Skip Link Styles */
-.skip-link {
-    font-style: italic; /* Italicizes the text */
-    color: #2980b9; /* Link color */
-    text-decoration: none; /* Removes underline */
-    margin-bottom: 20px; /* Space below the link */
+.dark-mode nav a {
+    color: #e0e0e0; /* Light text for nav links in dark mode */
+}
+
+.dark-mode table {
+    background-color: #1e1e1e; /* Darker background for tables */
+}
+
+.dark-mode th {
+    background-color: #3a3a3a; /* Darker header for tables */
+    color: #e0e0e0; /* Light text for table headers */
+}
+
+.dark-mode .athlete {
+    background: #1e1e1e; /* Darker background for athlete cards */
+    border: 1px solid #444; /* Darker border for athlete cards */
+}
+
+.dark-mode .athlete-card {
+    background-color: #2a2a2a; /* Slightly darker background for even cards in dark mode */
+}
+
+.dark-mode footer {
+    background: #1e1e1e; /* Darker footer background */
+    color: #e0e0e0; /* Light footer text */
+}
+
+.dark-mode .summary {
+    background: #1e1e1e; /* Darker background for summary in dark mode */
+    color: #e0e0e0; /* Light text for readability in dark mode */
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: #000; /* Black background for high contrast */
+    color: #ff0; /* Bright yellow text for high contrast */
+}
+
+.high-contrast header, 
+.high-contrast nav, 
+.high-contrast footer {
+    background-color: #000; /* Black background for header, nav, footer */
+}
+
+.high-contrast nav a,
+.high-contrast header h1 a,
+.high-contrast .summary {
+    background-color: #000;
+    color: #ff0; /* Bright yellow text for links and summary */
+    text-decoration: none; /* Remove underline for links */
+}
+
+.high-contrast table {
+    background-color: #000; /* Black background for tables */
+}
+
+.high-contrast th {
+    background-color: #ff0; /* Yellow background for table headers */
+    color: #000; /* Black text for table headers */
+}
+
+.high-contrast .athlete {
+    background: #000; /* Black background for athlete cards */
+    border: 1px solid #ff0; /* Yellow border for athlete cards */
+}
+
+.high-contrast .athlete-card {
+    background-color: #111; /* Slightly darker background for even cards in high contrast mode */
 }
 
 /* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 30px; /* Equal spacing below the header */
+    margin-bottom: 20px;
 }
 
-header h1, header h2 {
-    font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); /* Responsive font size */
-    color: var(--header-color); /* Color for headings */
-    margin-bottom: 10px; /* Space between title and subtitle */
-}
-
-header img {
-    border-radius: 50%;
-    width: 120px; /* Mobile-friendly size */
+header h1 a {
+    color: navy; /* Navy color for header link */
+    text-decoration: none;
 }
 
 /* Navigation Styles */
+nav {
+    background-color: #333; /* Dark background for navbar */
+    padding: 10px 0; /* Padding for touch targets */
+}
+
 nav ul {
-    list-style-type: none;
-    text-align: center;
-    margin-bottom: 30px; /* Equal spacing below the navigation */
+    list-style: none;
     padding: 0;
+    margin: 0; /* Remove default margin */
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+    display: inline; /* Horizontal navigation */
+    margin-right: 15px;
 }
 
-nav ul li a {
-    color: #2980b9; /* Link color */
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #1abc9c; /* Color change on hover */
+nav a {
+    color: white; /* White text for nav links */
+    text-decoration: none;
+    padding: 10px; /* Increase touch target size */
 }
 
 /* Main Content Styles */
-.main-content {
-    margin-bottom: 30px; /* Space below main content */
+main {
+    padding: 20px;
 }
 
-/* Table Styles - Mobile-First */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+/* Summary Section Styles */
+.summary {
+    background: #e9e9e9; /* Light card background */
+    padding: 15px;
+    border-radius: 5px;
 }
 
+/* Table Styles */
 table {
-    width: 100%;
+    width: 100%; /* Full width for better mobile experience */
     border-collapse: collapse;
-    background-color: var(--table-background); /* Background for the table */
-    margin-bottom: 30px; /* Equal spacing below the table */
-    border-radius: 10px; /* Curved borders for the table */
-    overflow: hidden; /* Ensures the border-radius is applied correctly */
-}
-
-tr {
-    display: block;
-    background-color: var(--card-background); /* Light card background */
-    border: 1px solid #ddd; /* Light border around each card */
-    border-radius: 8px; /* Curved corners for each row */
-    margin-bottom: 20px; /* Space between rows */
-    text-align: center; /* Center-aligns text within each card */
 }
 
 th, td {
-    display: block;
-    padding: 10px;
-    text-align: center; /* Center-aligns labels and values */
-    border: 1px solid #ddd; /* Light border around table cells */
+    padding: 12px; /* Increased padding for touch targets */
+    text-align: left;
 }
 
 th {
-    background-color: #003366; /* Navy blue for table header */
-    color: #ffffff; /* White text for contrast */
+    background-color: #0d0368; /* Blue background for table headers */
+    color: white;
 }
 
-td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: #2980b9; /* Color for data labels */
-    display: block;
-    margin-bottom: 5px;
+/* Sticky Header Style */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
-td {
-    color: var(--text-color); /* Default text color for table cells */
+/* Athlete Styles */
+.athlete {
+    margin: 10px; /* Margin for spacing between cards */
+    background: #fff; /* White background for athlete cards */
+    border: 1px solid #ddd; /* Light border for athlete cards */
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    position: relative; /* For positioning pseudo-elements */
+    flex: 1 1 30%; /* Ensure three cards per row */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-/* Alternating Row Colors for Readability */
-tr:nth-child(even) {
-    background-color: #f2f2f2; /* Alternating background color for even rows */
+.athlete:hover {
+    transform: scale(1.02); /* Scale effect on hover */
 }
 
-body.dark-mode tr:nth-child(even) {
-    background-color: #333; /* Dark background for even rows in dark mode */
-    color: #e0e0e0; /* Light text for better visibility */
+/* Accessibility Enhancements */
+.athlete:focus {
+    outline: 3px solid #007bff; /* Outline for keyboard navigation */
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    margin-top: 30px; /* Equal spacing above the footer */
-    padding: 20px;
-    font-size: 14px;
-    color: var(--footer-text-color); /* Footer text color */
-    background-color: var(--footer-background); /* Dark footer background */
+figure {
+    margin: 0;
 }
 
-footer a {
-    color: #1abc9c; /* Link color in footer */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* High-Contrast Mode Styles */
-body.high-contrast {
-    background-color: var(--background-color-high-contrast);
-    color: var(--text-color-high-contrast);
-}
-
-nav.high-contrast, footer.high-contrast {
-    background-color: #222; /* Darker backgrounds in high contrast mode */
-}
-
-tr:nth-child(even).high-contrast {
-    background-color: #000; /* Black background for even rows */
-    color: #fff; /* White text for better contrast */
-}
-
-/* Toggle Button Styles */
-.toggle-container {
-    display: flex;
-    justify-content: center; /* Center the toggle buttons */
-    margin-bottom: 30px; /* Space below the toggle */
-}
-
-.toggle-button {
-    background-color: var(--card-background); /* Match the card background */
-    border: 2px solid var(--header-color); /* Use navy border */
-    border-radius: 25px; /* Curved edges */
-    color: var(--header-color); /* Text color */
-    font-size: 16px; /* Font size */
-    padding: 10px 20px; /* Padding for button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-    margin: 0 5px; /* Space between buttons */
-}
-
-.toggle-button:hover {
-    background-color: var(--header-color); /* Navy background on hover */
-    color: #fff; /* White text on hover */
-}
-
-/* Active State for Toggle Buttons */
-.toggle-button.active {
-    background-color: var(--header-color); /* Active background color */
-    color: #fff; /* Active text color */
-}
-
-/* General Styles for Athlete Cards */
-.athlete-container {
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: space-between; /* Space between items */
-    margin: 20px 0; /* Margin for the section */
-}
-
-.athlete-card {
-    background-color: #f9f9f9; /* Light background for the card */
-    border: 1px solid #ddd; /* Subtle border for distinction */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin: 10px; /* Space around each card */
-    flex: 0 1 calc(33.33% - 20px); /* Default size: Three cards per row */
-    box-sizing: border-box; /* Include padding/border in the element's total width */
-}
-
-/* Athlete Image Style */
-.athlete-image {
-    width: 100%; /* Make image responsive */
+img {
+    width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
 
-/* Athlete Details Style */
-.athlete-details {
-    padding: 10px; /* Padding inside the details */
+/* Gallery Styles */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap images in the gallery */
 }
 
-.athlete-details dt {
-    font-weight: bold; /* Bold for the term */
+.gallery-container img {
+    width: calc(33.333% - 10px); /* Three images per row */
+    margin: 5px; /* Spacing between images */
+    border-radius: 5px; /* Rounded corners for aesthetics */
 }
 
-.athlete-details dd {
-    margin: 0 0 10px; /* Space below the definition */
+/* Athlete Card Grid Styles */
+.athlete-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around grid */
+    justify-items: center; /* Center cards within each column */
+    width: 100%; /* Full width to maintain centering */
+    box-sizing: border-box;
 }
 
-/* Collapsible Section Styles */
-.collapsible {
-    cursor: pointer; /* Pointer on hover */
-    padding: 10px; /* Padding for the collapsible header */
-    background-color: var(--header-color); /* Header color */
-    color: #fff; /* White text */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Space below */
+/* Athlete Card Styles */
+.athlete-card {
+    background-color: #f9f9f9; /* Light background for card */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 15px; /* Internal padding */
+    text-align: center; /* Center text inside card */
+    transition: transform 0.2s ease; /* Smooth scaling on hover */
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflow for a cleaner look */
 }
 
-.content {
-    display: none; /* Hidden by default */
-    padding: 10px; /* Padding for the content */
-    background-color: #f1f1f1; /* Light background */
-    border-radius: 5px; /* Rounded corners */
+.athlete-card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-/* Transitions for Content */
-.content.show {
-    display: block; /* Show when active */
+/* Athlete Card Content */
+.athlete-card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
 }
 
-/* Touch-Friendly Hover Effects */
-.athlete-card:hover .athlete-details {
-    background-color: #f0f8ff; /* Light blue on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+.athlete-card img {
+    border-radius: 60%; /* Circular profile picture */
+    width: 50%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
 }
 
-tr {
-    transition: background-color 0.3s; /* Smooth background color transition */
+.athlete-card dl {
+    margin: 10px 0; /* Spacing for description list */
 }
 
-nav {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow */
+.athlete-card dt {
+    font-weight: bold; /* Bold labels */
 }
 
-footer a:hover {
-    color: #2980b9; /* Link color on hover */
+.athlete-card dd {
+    margin: 0 0 10px; /* Spacing for description */
 }
-

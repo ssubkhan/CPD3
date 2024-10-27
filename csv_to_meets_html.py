@@ -27,13 +27,12 @@ def csv_to_html(csv_filename, output_folder):
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{link_text}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{link_text}</title>
 
-<link rel="stylesheet" href="../css/reset.css">  <!-- Link to the CSS file -->
-<link rel="stylesheet" href="../css/style.css">  <!-- Link to the CSS file -->
-
+    <link rel="stylesheet" href="../css/reset.css">  <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="../css/style.css">  <!-- Link to the CSS file -->
 </head>
 <body>
     <button id="normal-mode" onclick="setMode('normal')">Normal</button>
@@ -56,11 +55,11 @@ def csv_to_html(csv_filename, output_folder):
     </header>
     <main id="main">
         <section class="summary" id="summary">
-            {summary_text}
+            <p class="summary-text">{summary_text}</p>
         </section>
         
         <section id="team-results">
-            <h2 class="sticky-header">Team Results (Place / Team / Score) </h2>
+            <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
             <table>
             """
 
@@ -81,7 +80,8 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += "</table>\n"
                     html_content += """</section>\n
                     <section id="individual-results">\n
-                    <h2>Individual Results</h2>"""
+                    <h2>Individual Results</h2>
+                    <div class="results-grid">"""  # Added a div for grid layout
 
                 place = row[0]
                 grade = row[1]
@@ -89,11 +89,11 @@ def csv_to_html(csv_filename, output_folder):
                 time = row[4]
                 profile_pic = row[7]
 
-                # Add the athlete div
+                # Add the athlete card
                 html_content += f"""
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
+                        <img src="../images/profiles/{profile_pic}" width="10" alt="Profile picture of {name}"> 
                         <figcaption>{name}</figcaption>
                     </figure>
                     <dl>
@@ -104,7 +104,8 @@ def csv_to_html(csv_filename, output_folder):
                 </div>
                 """
 
-        html_content += """</section>\n
+        html_content += """</div> <!-- Close results-grid -->
+        </section>\n
         <section id="gallery">
             <h2>Gallery</h2>
             <div class="gallery-container">""" + create_meet_image_gallery(link_url) + """</div>
@@ -130,21 +131,7 @@ def csv_to_html(csv_filename, output_folder):
                 }
             }
         </script>
-        <style>
-            /* Sticky Header Style for Team Results */
-            .sticky-header {
-                position: -webkit-sticky; /* For Safari */
-                position: sticky;
-                top: 0;
-                z-index: 1000; /* Ensures it stays on top of other content */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
-            }
-
-            /* Additional styles to manage the body layout */
-            body {
-                padding-top: 60px; /* Give space for the header */
-            }
-        </style>
+     
         </body>
         </html>
         """
@@ -213,4 +200,3 @@ if __name__ == "__main__":
         print(f"Folder '{meets_folder}' does not exist.")
     else:
         process_meet_files()
-

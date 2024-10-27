@@ -2,13 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEC Jamboree #1 Mens 5000 Meters Varsity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC Jamboree #1 Mens 5000 Meters Varsity</title>
 
-<link rel="stylesheet" href="../css/reset.css">  <!-- Link to the CSS file -->
-<link rel="stylesheet" href="../css/style.css">  <!-- Link to the CSS file -->
-
+    <link rel="stylesheet" href="../css/reset.css">  <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="../css/style.css">  <!-- Link to the CSS file -->
 </head>
 <body>
     <button id="normal-mode" onclick="setMode('normal')">Normal</button>
@@ -31,11 +30,11 @@
     </header>
     <main id="main">
         <section class="summary" id="summary">
-            <p>Ann Arbor Skyline's varsity boys team placed 11th overall with 102 points. Leading the team was <span class="athlete">Nicholas Yuan</span>, who finished 20th with a time of <time>17:29.80</time>, followed by <span class="athlete">Bruno Cifaldi</span> in 25th (<time>17:41.70</time>), and <span class="athlete">Enshu Kuan</span> in 32nd (<time>17:52.60</time>). <span class="athlete">Jack Robichaud</span> (40th, <time>18:12.20</time>) and <span class="athlete">Zeke Lafferty</span> (51st, <time>18:29.10</time>) rounded out the scoring for Skyline, while <span class="athlete">Matthew Casavant</span> achieved a personal record (PR) with a time of <time>18:01.60</time>.</p>
+            <p class="summary-text"><p>Ann Arbor Skyline's varsity boys team placed 11th overall with 102 points. Leading the team was <span class="athlete">Nicholas Yuan</span>, who finished 20th with a time of <time>17:29.80</time>, followed by <span class="athlete">Bruno Cifaldi</span> in 25th (<time>17:41.70</time>), and <span class="athlete">Enshu Kuan</span> in 32nd (<time>17:52.60</time>). <span class="athlete">Jack Robichaud</span> (40th, <time>18:12.20</time>) and <span class="athlete">Zeke Lafferty</span> (51st, <time>18:29.10</time>) rounded out the scoring for Skyline, while <span class="athlete">Matthew Casavant</span> achieved a personal record (PR) with a time of <time>18:01.60</time>.</p></p>
         </section>
         
         <section id="team-results">
-            <h2 class="sticky-header">Team Results (Place / Team / Score) </h2>
+            <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
             <table>
             <tr><th>Place</th><th>Team</th><th>Score</th></tr>
 <tr><td>1</td><td>Ypsilanti Lincoln</td><td>31</td></tr>
@@ -57,9 +56,10 @@
                     <section id="individual-results">
 
                     <h2>Individual Results</h2>
-                <div class="athlete">
+                    <div class="results-grid">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/21615273.jpg" width="200" alt="Profile picture of Nicholas Yuan"> 
+                        <img src="../images/profiles/21615273.jpg" width="10" alt="Profile picture of Nicholas Yuan"> 
                         <figcaption>Nicholas Yuan</figcaption>
                     </figure>
                     <dl>
@@ -69,9 +69,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/21147176.jpg" width="200" alt="Profile picture of Bruno Cifaldi"> 
+                        <img src="../images/profiles/21147176.jpg" width="10" alt="Profile picture of Bruno Cifaldi"> 
                         <figcaption>Bruno Cifaldi</figcaption>
                     </figure>
                     <dl>
@@ -81,9 +81,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/23687884.jpg" width="200" alt="Profile picture of Enshu Kuan"> 
+                        <img src="../images/profiles/23687884.jpg" width="10" alt="Profile picture of Enshu Kuan"> 
                         <figcaption>Enshu Kuan</figcaption>
                     </figure>
                     <dl>
@@ -93,9 +93,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/18820279.jpg" width="200" alt="Profile picture of Jack Robichaud"> 
+                        <img src="../images/profiles/18820279.jpg" width="10" alt="Profile picture of Jack Robichaud"> 
                         <figcaption>Jack Robichaud</figcaption>
                     </figure>
                     <dl>
@@ -105,9 +105,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/21142917.jpg" width="200" alt="Profile picture of Zeke Lafferty"> 
+                        <img src="../images/profiles/21142917.jpg" width="10" alt="Profile picture of Zeke Lafferty"> 
                         <figcaption>Zeke Lafferty</figcaption>
                     </figure>
                     <dl>
@@ -117,9 +117,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/21147171.jpg" width="200" alt="Profile picture of Gustaf Finn"> 
+                        <img src="../images/profiles/21147171.jpg" width="10" alt="Profile picture of Gustaf Finn"> 
                         <figcaption>Gustaf Finn</figcaption>
                     </figure>
                     <dl>
@@ -129,9 +129,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/23349698.jpg" width="200" alt="Profile picture of Oskar MacArthur"> 
+                        <img src="../images/profiles/23349698.jpg" width="10" alt="Profile picture of Oskar MacArthur"> 
                         <figcaption>Oskar MacArthur</figcaption>
                     </figure>
                     <dl>
@@ -141,9 +141,9 @@
                     </dl>
                 </div>
                 
-                <div class="athlete">
+                <div class="athlete-card">
                     <figure> 
-                        <img src="../images/profiles/19203161.jpg" width="200" alt="Profile picture of Martin Gehrke"> 
+                        <img src="../images/profiles/19203161.jpg" width="10" alt="Profile picture of Martin Gehrke"> 
                         <figcaption>Martin Gehrke</figcaption>
                     </figure>
                     <dl>
@@ -152,22 +152,23 @@
                         <dt>Grade</dt><dd>9</dd>
                     </dl>
                 </div>
-                </section>
+                </div> <!-- Close results-grid -->
+        </section>
 
         <section id="gallery">
             <h2>Gallery</h2>
-            <div class="gallery-container"><img src="../images/meets/238311/IMG_9278.jpg" alt="Image from meet IMG_9278.jpg" />
-<img src="../images/meets/238311/IMG_9308.jpg" alt="Image from meet IMG_9308.jpg" />
-<img src="../images/meets/238311/IMG_9277.jpg" alt="Image from meet IMG_9277.jpg" />
+            <div class="gallery-container"><img src="../images/meets/238311/IMG_9293.jpg" alt="Image from meet IMG_9293.jpg" />
+<img src="../images/meets/238311/IMG_9296.jpg" alt="Image from meet IMG_9296.jpg" />
+<img src="../images/meets/238311/IMG_9283.jpg" alt="Image from meet IMG_9283.jpg" />
+<img src="../images/meets/238311/IMG_9325.jpg" alt="Image from meet IMG_9325.jpg" />
+<img src="../images/meets/238311/IMG_9266.jpg" alt="Image from meet IMG_9266.jpg" />
+<img src="../images/meets/238311/IMG_9319.jpg" alt="Image from meet IMG_9319.jpg" />
+<img src="../images/meets/238311/IMG_9295.jpg" alt="Image from meet IMG_9295.jpg" />
+<img src="../images/meets/238311/IMG_9276.jpg" alt="Image from meet IMG_9276.jpg" />
+<img src="../images/meets/238311/IMG_9280.jpg" alt="Image from meet IMG_9280.jpg" />
 <img src="../images/meets/238311/IMG_9320.jpg" alt="Image from meet IMG_9320.jpg" />
-<img src="../images/meets/238311/IMG_9301.jpg" alt="Image from meet IMG_9301.jpg" />
-<img src="../images/meets/238311/IMG_9334.jpg" alt="Image from meet IMG_9334.jpg" />
-<img src="../images/meets/238311/IMG_9333.jpg" alt="Image from meet IMG_9333.jpg" />
-<img src="../images/meets/238311/IMG_9318.jpg" alt="Image from meet IMG_9318.jpg" />
-<img src="../images/meets/238311/IMG_9264.jpg" alt="Image from meet IMG_9264.jpg" />
-<img src="../images/meets/238311/IMG_9294.jpg" alt="Image from meet IMG_9294.jpg" />
-<img src="../images/meets/238311/IMG_9330.jpg" alt="Image from meet IMG_9330.jpg" />
-<img src="../images/meets/238311/IMG_9272.jpg" alt="Image from meet IMG_9272.jpg" /></div>
+<img src="../images/meets/238311/IMG_9297.jpg" alt="Image from meet IMG_9297.jpg" />
+<img src="../images/meets/238311/IMG_9300.jpg" alt="Image from meet IMG_9300.jpg" /></div>
         </section>
         </main>   
         <footer>
@@ -190,21 +191,7 @@
                 }
             }
         </script>
-        <style>
-            /* Sticky Header Style for Team Results */
-            .sticky-header {
-                position: -webkit-sticky; /* For Safari */
-                position: sticky;
-                top: 0;
-                z-index: 1000; /* Ensures it stays on top of other content */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow for better visibility */
-            }
-
-            /* Additional styles to manage the body layout */
-            body {
-                padding-top: 60px; /* Give space for the header */
-            }
-        </style>
+     
         </body>
         </html>
         
