@@ -39,7 +39,7 @@ def csv_to_html(csv_filename, output_folder):
     <button id="dark-mode" onclick="setMode('dark')">Dark Mode</button>
     <button id="high-contrast-mode" onclick="setMode('high-contrast')">High Contrast</button>
     
-    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <a href="#summary" class="skip-link">Skip to Main Content</a>
     <nav>
         <ul>
             <li><a href="../index.html">Home Page</a></li>
@@ -55,9 +55,10 @@ def csv_to_html(csv_filename, output_folder):
     </header>
     <main id="main">
         <section class="summary" id="summary">
-            <p class="summary-text">{summary_text}</p>
+            <h2>Summary</h2>
+            <p>{summary_text}</p>
         </section>
-        
+
         <section id="team-results">
             <h2 class="sticky-header">Team Results (Place / Team / Score)</h2>
             <table>
@@ -80,7 +81,7 @@ def csv_to_html(csv_filename, output_folder):
                     html_content += "</table>\n"
                     html_content += """</section>\n
                     <section id="individual-results">\n
-                    <h2>Individual Results</h2>
+                     <h2 class="sticky-header">Individual Results</h2>
                     <div class="results-grid">"""  # Added a div for grid layout
 
                 place = row[0]
@@ -107,7 +108,7 @@ def csv_to_html(csv_filename, output_folder):
         html_content += """</div> <!-- Close results-grid -->
         </section>\n
         <section id="gallery">
-            <h2>Gallery</h2>
+              <h2 class="sticky-header">Gallery</h2>
             <div class="gallery-container">""" + create_meet_image_gallery(link_url) + """</div>
         </section>
         </main>   
