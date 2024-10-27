@@ -1,12 +1,15 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
+    text-align: center;
     line-height: 1.6;
     padding-top: 60px; /* Space for the fixed header */
     background-color: #f9f9f9; /* Very light background */
     color: #333; /* Dark text for readability */
     margin: 0; /* Remove default margin */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
 
 /* Skip Link */
 .skip-link {
@@ -20,6 +23,31 @@ body {
     text-decoration: none; /* Remove underline */
     transition: background 0.3s; /* Smooth background transition */
     z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Meet Button Styles */
+.meet-button {
+    display: inline-block; /* Allows padding and margins */
+    background-color: #001a37; /* Button color */
+    color: white; /* Text color */
+    padding: 15px 25px; /* Padding for button size */
+    margin: 10px; /* Spacing between buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for effects */
+}
+
+/* Hover Effect for Meet Buttons */
+.meet-button:hover {
+    background-color: #b35a01; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Accessibility for Meet Buttons */
+.meet-button:focus {
+    outline: 3px solid #0056b3; /* Outline for keyboard navigation */
 }
 
 /* Change color on focus */
@@ -131,6 +159,7 @@ nav {
 
 nav ul {
     list-style: none;
+    text-align: center;
     padding: 0;
     margin: 0; /* Remove default margin */
 }
@@ -142,9 +171,22 @@ nav ul li {
 
 nav a {
     color: white; /* White text for nav links */
+    text-align: center;
     text-decoration: none;
     padding: 10px; /* Increase touch target size */
+    border: 2px solid transparent; /* Initial border, will change on hover and focus */
+    border-radius: 5px; /* Slightly rounded corners for aesthetics */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
+
+/* Hover and Focus Styles */
+nav a:hover,
+nav a:focus {
+    border-color: #007bff; /* Change border color on hover/focus */
+    outline: none; /* Remove default outline */
+    background-color: rgba(0, 123, 255, 0.1); /* Optional: light background on hover/focus */
+}
+
 
 /* Main Content Styles */
 main {
