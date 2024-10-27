@@ -2,21 +2,47 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.5;
-    color: #333;
+    color: #333; /* Dark text for readability */
     background-color: #f9f9f9; /* Very light background for accessibility */
-    padding: 20px;
+    padding: 20px; /* Padding for the whole body */
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for h2 titles in index.html */
+h2 {
+    color: navy; /* Change the text color to navy */
+}
+
+
+
+/* Centered Content Styles */
+.container {
+    max-width: 600px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Padding on all sides for content */
+    background-color: #ffffff; /* Background for content area */
+    border-radius: 10px; /* Rounded corners for content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Skip Link Styles */
+.skip-link {
+    font-style: italic; /* Italicizes the text */
+    color: #2980b9; /* Link color */
+    text-decoration: none; /* Removes underline */
+    margin-bottom: 20px; /* Space below the link */
 }
 
 /* Header Styles */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Equal spacing below the header */
 }
 
 header h1, header h2 {
     font-size: 28px; /* Adjusted for mobile-first */
     color: #2c3e50; /* Dark color for headings */
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space between title and subtitle */
 }
 
 header img {
@@ -28,7 +54,7 @@ header img {
 nav ul {
     list-style-type: none;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Equal spacing below the navigation */
     padding: 0;
 }
 
@@ -38,14 +64,19 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #2980b9;
+    color: #2980b9; /* Link color */
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #1abc9c;
+    color: #1abc9c; /* Color change on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-bottom: 30px; /* Space below main content */
 }
 
 /* Table Styles - Mobile-First */
@@ -58,7 +89,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: #d0e4f7; /* In-between blue for the table background */
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Equal spacing below the table */
     border-radius: 10px; /* Curved borders for the table */
     overflow: hidden; /* Ensures the border-radius is applied correctly */
 }
@@ -68,7 +99,7 @@ tr {
     background-color: #ffffff; /* Light card background */
     border: 1px solid #ddd; /* Light border around each card */
     border-radius: 8px; /* Curved corners for each row */
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Space between rows */
     text-align: center; /* Center-aligns text within each card */
 }
 
@@ -81,7 +112,7 @@ th, td {
 
 th {
     background-color: #003366; /* Navy blue for table header */
-    color: #ffffff; /* White text for better contrast */
+    color: #ffffff; /* White text for contrast */
     font-weight: bold;
 }
 
@@ -105,17 +136,17 @@ tr:nth-child(even) {
 /* Footer Styles */
 footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px; /* Equal spacing above the footer */
     padding: 20px;
     font-size: 14px;
     color: #fff;
-    background-color: #2c3e50;
+    background-color: #2c3e50; /* Dark footer background */
 }
 
 footer a {
-    color: #1abc9c;
+    color: #1abc9c; /* Link color in footer */
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
