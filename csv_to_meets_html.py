@@ -176,10 +176,14 @@ def select_random_photos(folder_path, num_photos=12):
 
 def generate_image_tags(image_files, folder_path):
     img_tags = []
-    for img in image_files:
+    
+    for index, img in enumerate(image_files):
         img_path = os.path.join(folder_path, img)
-        img_tags.append(f'<img src="../{img_path}" alt="Image from meet {img}" />')
+        alt_text = f"Athlete running track course {index + 1}"  # Numbered alternative text
+        img_tags.append(f'<img src="../{img_path}" alt="{alt_text}" />')
+    
     return "\n".join(img_tags)
+
 
 def process_meet_files():
     meets_folder = os.path.join(os.getcwd(), "meets")
