@@ -128,8 +128,7 @@ def csv_to_html(csv_filename, output_folder):
                     document.body.classList.add('high-contrast');
                 }
             }
-        </script>
-     <script src="script.js"></script>
+       
         </body>
         </html>
         """

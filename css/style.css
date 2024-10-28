@@ -27,6 +27,28 @@
     }
 }
 
+/* Addresses Prefers-Reduced Preference */
+@media (prefers-reduced-motion: reduce) {
+    .meet-button {
+        transition: background-color 0.1s; /* Shortened transition duration for background color */
+    }
+
+    /* Disable hover effects for reduced motion */
+    .meet-button:hover {
+        background-color: #710055; /* Keep background color change */
+        transform: none; /* Disable scale effect */
+    }
+
+    /* Disable hover effect on athlete cards */
+    .athlete-card {
+        transition: none; /* Disable transition */
+    }
+
+    .athlete:hover {
+        transform: none; /* Disable scale effect */
+    }
+}
+
 
 /* Global Styles */
 body {
@@ -353,6 +375,8 @@ img {
     margin: 0 auto 20px; /* Center the card and add bottom margin */
 }
 
+
+
 .card-inner {
     position: relative;
     width: 100%;
@@ -406,8 +430,8 @@ body.high-contrast .athlete-card .card-back {
 
 
 .card-front img {
-    border-radius: 50%; /* Circular profile picture */
-    width: 80%; /* Adjust width to fill more space */
+    border-radius: 400px; /* Circular profile picture */
+    width: 60%; /* Adjust width to fill more space */
     height: auto; /* Maintain aspect ratio */
     border: 5px solid #a3a3a3; /* Border color and thickness */
     display: block; /* Ensure it behaves like a block element */
