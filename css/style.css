@@ -369,7 +369,8 @@ img {
 /* Athlete Card Styles */
 .athlete-card {
     perspective: 1000px; /* Adds perspective for the 3D flip effect */
-    width: 90%; /* Adjust width to a percentage for responsive design */
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Optional: maximum width to limit size */
     height: 500px; /* Fixed height for the card */
     margin: 0 auto 20px; /* Center the card and add bottom margin */
 }
@@ -463,4 +464,3 @@ body.high-contrast .athlete-card .card-back {
     /* No longer necessary to apply hover scale here */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-
