@@ -1,3 +1,33 @@
+/* Mobile View Optimization */
+@media (min-width: 320px) {
+    body {
+        font-size: 16px; /* Adjust font size for readability on smaller screens */
+    }
+
+    /* Additional styles for mobile optimization */
+    .meet-button {
+        padding: 12px 20px; /* Adjust button padding for smaller screens */
+        font-size: 14px; /* Reduce font size for buttons */
+    }
+
+    .summary {
+        padding: 15px; /* Adjust padding for summary cards */
+    }
+
+    table {
+        font-size: 14px; /* Reduce font size for table content */
+    }
+
+    th, td {
+        padding: 10px; /* Reduce padding for table cells */
+    }
+
+    .athlete-card {
+        width: 90%; /* Make athlete cards take more width on smaller screens */
+    }
+}
+
+
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
@@ -41,7 +71,7 @@ body {
 
 /* Hover Effect for Meet Buttons */
 .meet-button:hover {
-    background-color: #b35a01; /* Darker blue on hover */
+    background-color: #710055; /* Darker blue on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
@@ -197,7 +227,7 @@ main {
 .summary {
     background: #e9e9e9; /* Light card background */
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
     border-radius: 0px;
     border: 2px solid #ccc; /* Light gray border */
@@ -306,60 +336,108 @@ img {
 /* Athlete Card Grid Styles */
 .athlete-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-template-columns: 1fr; /* Single column for full-width cards */
     gap: 20px; /* Space between cards */
     padding: 20px; /* Padding around grid */
-    justify-items: center; /* Center cards within each column */
-    width: 100%; /* Full width to maintain centering */
+    justify-items: center; /* Center cards */
+    width: 100%; /* Full width */
     box-sizing: border-box;
 }
 
 /* Athlete Card Styles */
 .athlete-card {
+    perspective: 1000px; /* Adds perspective for the 3D flip effect */
+    width: 100%; /* Full width of the container */
+    max-width: 400px; /* Optional: maximum width to limit size */
+    height: 500px; /* Fixed height for the card */
+    margin: 0 auto 20px; /* Center the card and add bottom margin */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure inner card takes full height */
+    transform-style: preserve-3d; /* Enable 3D effect */
+    transition: transform 0.6s; /* Duration of flip */
+}
+
+.athlete-card:hover .card-inner,
+.athlete-card:active .card-inner { /* Add :active for mobile */
+    transform: rotateY(180deg); /* Rotate inner card on hover or touch */
+}
+
+/* Card Front and Back Base Styles */
+.athlete-card .card-front,
+.athlete-card .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Full height of the card */
+    backface-visibility: hidden; /* Hide back face */
+    display: flex; /* Flexbox for centering content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    border-radius: 8px; /* Match border radius */
+    padding: 15px; /* Internal padding */
+    box-sizing: border-box;
+}
+
+/* Base styles for athlete cards */
+.athlete-card .card-front,
+.athlete-card .card-back {
     background-color: #f9f9f9; /* Light background for card */
     border: 3px solid #ddd; /* Light border */
-    margin-bottom: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 15px; /* Internal padding */
-    text-align: center; /* Center text inside card */
-    transition: transform 0.2s ease; /* Smooth scaling on hover */
-    box-sizing: border-box;
-    overflow: hidden; /* Hide overflow for a cleaner look */
 }
 
-.athlete-card:hover {
-    transform: scale(1.05); /* Slightly enlarge card on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+/* Dark mode styles */
+body.dark-mode .athlete-card .card-front,
+body.dark-mode .athlete-card .card-back {
+    background-color: #333; /* Dark background for card */
+    border: 3px solid #555; /* Darker border */
+    color: #fff; /* Light text for contrast */
 }
 
-/* Athlete Card Content */
-.athlete-card figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20;
+/* High contrast mode styles */
+body.high-contrast .athlete-card .card-front,
+body.high-contrast .athlete-card .card-back {
+    background-color: #000; /* Black background for card */
+    border: 3px solid #ff0; /* Bright yellow border for high contrast */
+    color: #ff0; /* Bright text for high contrast */
 }
 
-.athlete-card img {
+
+.card-front img {
     border-radius: 50%; /* Circular profile picture */
-    width: 35%; /* Responsive image width */
+    width: 80%; /* Adjust width to fill more space */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image */
     border: 5px solid #a3a3a3; /* Border color and thickness */
     display: block; /* Ensure it behaves like a block element */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for a lifted effect */
+    margin: 0 auto; /* Center the image */
 }
 
+/* Card Back Styles */
+.card-back {
+    transform: rotateY(180deg); /* Start back face rotated */
+    padding: 10px; /* Padding for content on the back */
+    align-items: flex-start; /* Align items at the start for the back */
+}
 
-.athlete-card dl {
+/* Description List Styles */
+.card-back dl {
     margin: 10px 0; /* Spacing for description list */
 }
 
-.athlete-card dt {
+.card-back dt {
     font-weight: bold; /* Bold labels */
 }
 
-.athlete-card dd {
+.card-back dd {
     margin: 0 0 10px; /* Spacing for description */
 }
+
+/* Hover Effects */
+.athlete-card:hover {
+    /* No longer necessary to apply hover scale here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
